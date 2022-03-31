@@ -4,6 +4,7 @@ import Favicon from 'react-favicon';
 import GlobalStyle from '../theme/globalStyles';
 
 import Login from './login|sign-up/login';
+import SignUp from './login|sign-up/sign-up';
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<Login />}/>
+                    <Route path='/cadastro' element={<SignUp />}/>
                 </Routes>
             </BrowserRouter>
         </>
