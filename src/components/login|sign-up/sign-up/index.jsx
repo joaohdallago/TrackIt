@@ -1,6 +1,16 @@
+import ContainerLoginSignUp from "../theme/containerLoginSignUp";
+
+import Logo from "../logo ";
+import SignUpForm from "./sign-up-form";
+import LinkToLogin from "./link-to-login"
+
 const SignUp = () => {
     return (
-        <h1>SignUp</h1>
+        <ContainerLoginSignUp>
+            <Logo />
+            <SignUpForm />
+            <LinkToLogin />
+        </ContainerLoginSignUp>
     )
 }
 

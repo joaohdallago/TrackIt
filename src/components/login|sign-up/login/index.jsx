@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import ContainerLoginSignUp from "../theme/containerLoginSignUp";
 
 import Logo from "../logo ";
 import LoginForm from "./login-form";
@@ -6,21 +6,12 @@ import LinkToSignUp from "./link-to-sign-up";
 
 const Login = () => {
     return (
-        <Container>
+        <ContainerLoginSignUp>
             <Logo />
             <LoginForm />
             <LinkToSignUp />
-        </Container>
+        </ContainerLoginSignUp>
     )
 }
-
-const Container = styled.div`
-    height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-`;
 
 export default Login;
