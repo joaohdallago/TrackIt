@@ -28,6 +28,11 @@ const ContainerLoginSignUp = styled.div`
 
             text-indent: 11px;
 
+            ${({isDisabled}) => isDisabled && `
+                background-color: #F2F2F2;
+                color: #AFAFAF;
+            `}
+
             ::placeholder {
                 color: #D5D5D5;
             }
@@ -36,6 +41,7 @@ const ContainerLoginSignUp = styled.div`
         button {
             color: #FFF;
             background-color: #52B6FF;
+            ${({isDisabled}) => isDisabled && 'opacity: 0.7'}
         }
     }
 
