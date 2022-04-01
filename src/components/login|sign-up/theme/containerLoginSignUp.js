@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ContainerLoginSignUp = styled.div`
-    margin-top: 25%;
+    margin-top: 70px;
 
 
     display: flex;

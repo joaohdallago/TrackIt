@@ -9,6 +9,8 @@ import GlobalStyle from '../theme/globalStyles';
 import Login from './login|sign-up/login';
 import SignUp from './login|sign-up/sign-up';
 import Today from './main/today'
+import Habits from './main/habits';
+import History from './main/history';
 
 import UserContext from '../contexts/UserContext'
 import IsDisabledContext from '../contexts/IsDisabledContext';
@@ -28,6 +30,8 @@ const App = () => {
                             <Route path='/' element={<Login />}/>
                             <Route path='/cadastro' element={<SignUp />}/>
                             <Route path='/hoje' element={<Today />} />
+                            <Route path='/habitos' element={<Habits />} />
+                            <Route path='/historico' element={<History />} />
                         </Routes>
                     </BrowserRouter>
                 </IsDisabledContext.Provider>

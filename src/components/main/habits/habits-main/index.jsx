@@ -1,11 +1,11 @@
 import ContainerMain from "../../theme/containerMain";
 
-const TodayMain = () => {
+const HabitsMain = () => {
     return (
         <ContainerMain>
-            <h1>Hoje</h1>
+            <h1>Hábitos</h1>
         </ContainerMain>
     )
 };
 
-export default TodayMain;
+export default HabitsMain;
