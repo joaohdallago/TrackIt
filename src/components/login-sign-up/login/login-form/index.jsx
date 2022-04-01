@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import LoginFormInputs from './login-form-inputs'
-import LoginSignUpButton from '../../login-sign-up-button';
+import LoginSignUpButton from '../../login-sign-up-button'
 
 import UserContext from '../../../../contexts/UserContext'
 import IsDisabledContext from '../../../../contexts/IsDisabledContext'

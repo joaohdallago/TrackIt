@@ -6,8 +6,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Favicon from 'react-favicon';
 import GlobalStyle from '../theme/globalStyles';
 
-import Login from './login|sign-up/login';
-import SignUp from './login|sign-up/sign-up';
+import Login from './login-sign-up/login';
+import SignUp from './login-sign-up/sign-up';
 import Today from './main/today'
 import Habits from './main/habits';
 import History from './main/history';
