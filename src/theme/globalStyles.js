@@ -10,12 +10,12 @@ const GlobalStyle = createGlobalStyle`
 
         text-decoration: none;
         font-weight: normal;
-
-        color: #666;
     }
 
     body {
         font-family: 'Lexend Deca', sans-serif;
+
+        color: #666;
     }
 `;
 
