@@ -15,14 +15,16 @@ import History from './main/history';
 import UserContext from '../contexts/UserContext'
 import IsDisabledContext from '../contexts/IsDisabledContext';
 import NewHabitContext from '../contexts/NewHabitContext'
+import UserTodayHabitsContext from '../contexts/UserTodayHabitsContext'
 
 const App = () => {
-    const [user, setUser] = useState({});
-    const [isDisabled, setIsDisabled] = useState(false);
-    const [newHabitData, setNewHabitData] = useState({
+    const [ user, setUser ] = useState({});
+    const [ isDisabled, setIsDisabled ] = useState(false);
+    const [ newHabitData, setNewHabitData ] = useState({
         name: '',
         days: []
     });
+    const [ UserTodayHabitList ] = useState([]);
 
     return (
         <>

@@ -14,6 +14,11 @@ const NewHabitModal = ({ setIsModalOpen }) => {
 
     const submitNewHabit = (event) => {
         event.preventDefault();
+
+        if(newHabitData.days.length === 0) {
+            alert('Selecione ao menos um dia da semana!')
+        }
+
         const newHabitPostURL = 'https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits';
         const config = {
             headers: {
@@ -25,6 +30,7 @@ const NewHabitModal = ({ setIsModalOpen }) => {
 
         promise.then(() => {
             setNewHabitData({name: '', days: []});
+            setIsModalOpen(false)
         })
 
         promise.catch(() => {

@@ -1,24 +1,16 @@
-import styled from "styled-components";
+import TodayMainHeader from "./today-main-header";
+import UserTodayHabits from "./user-today-habits";
+
 
 import ContainerMain from "../../../../theme/containerMain";
-
-import FormattedDay from './FormattedDay'
 
 const TodayMain = () => {
     return (
         <ContainerMain>
-            <Container>
-                <FormattedDay />
-                <span>Nenhum hábito concluído ainda</span>
-            </Container>
+            <TodayMainHeader />
+            <UserTodayHabits />
         </ContainerMain>
     )
 };
-
-const Container = styled.div`
-    font-size: 18px;
-
-    color: #BABABA;
-`;
 
 export default TodayMain;

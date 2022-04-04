@@ -23,12 +23,12 @@ const UserHabits = () => {
         const promise = axios.get(userHabitsGetURL, config);
 
         promise.then(response => setUserHabitList(response.data))
-    }, []);
+    }, [userHabitList]);
 
     return (
         <Container>
             {
-                userHabitList ?
+                userHabitList.length !== 0 ?
                     userHabitList.map(habitData => <UserHabit {...{habitData}}/>)
                 :
                     <p>

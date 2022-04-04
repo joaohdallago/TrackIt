@@ -1,6 +1,12 @@
-const UserHabitDay = ({ dayInitial }) => {
+import ContainerDayOfTheWeek from '../../../../../../../../theme/containerDayOfTheWeek'
+
+const UserHabitDay = ({ dayInitial, index, days }) => {
+    const isChecked = days.includes(index)
+
     return (
-        <span>{dayInitial}</span>
+        <ContainerDayOfTheWeek {...{isChecked}}>
+            {dayInitial}
+        </ContainerDayOfTheWeek>
     )
 };
 

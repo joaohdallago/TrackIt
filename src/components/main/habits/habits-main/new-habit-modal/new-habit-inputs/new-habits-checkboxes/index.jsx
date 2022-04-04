@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import NewHabitCheckbox from "./new-habit-checkbox";
 
+
 const NewHabitCheckboxes = () => {
     const daysOfTheWeek = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
 

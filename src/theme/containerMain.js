@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const ContainerMain = styled.div`
-        height: 100vh;
+        min-height: 100vh;
 
-        padding: 98px 17px 50px;
+        padding: 98px 17px 98px;
 
         background-color: #F2F2F2;
 
@@ -12,7 +12,6 @@ const ContainerMain = styled.div`
 
                 color: #126BA5;
         }
-
 
         p {
                 font-size: 18px;
