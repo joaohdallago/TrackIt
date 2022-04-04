@@ -10,13 +10,16 @@ const ContainerLoginSignUp = styled.div`
         display: flex;
         flex-direction: column;
         gap: 6px;
+        
         * {
-            width: 303px;
-            height: 45px;
             border-radius: 5px;
             font-size: 20px;
         }
+
         input {
+            width: 303px;
+            height: 45px;
+
             border: 1px solid #D5D5D5;
             text-indent: 11px;
             ${({isDisabled}) => isDisabled && `
@@ -28,6 +31,13 @@ const ContainerLoginSignUp = styled.div`
             }
         }
         button {
+            width: 303px;
+            height: 45px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             color: #FFF;
             background-color: #52B6FF;
             ${({isDisabled}) => isDisabled && 'opacity: 0.7'}

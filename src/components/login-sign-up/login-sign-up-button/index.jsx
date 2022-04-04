@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import IsDisabledContext from "../../../contexts/IsDisabledContext";
 
-import { Rings } from  'react-loader-spinner'
+import { ThreeDots } from  'react-loader-spinner'
 
 
 const LoginSignUpButton = ({ text }) => {
@@ -11,9 +11,9 @@ const LoginSignUpButton = ({ text }) => {
         <button type="submit" disabled={isDisabled}>
             {
                 isDisabled ?
-                    <Rings
-                        height="80"
-                        width="80"
+                    <ThreeDots
+                        height="50"
+                        width="50"
                         color='#fff'
                         ariaLabel='loading'
                     />
