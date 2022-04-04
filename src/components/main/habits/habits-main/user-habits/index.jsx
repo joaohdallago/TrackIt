@@ -11,6 +11,7 @@ const UserHabits = () => {
 
     const [ userHabitList, setUserHabitList ] = useState([]);
 
+
     useEffect(() => {
         const userHabitsGetURL = 'https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits';
 
@@ -22,18 +23,23 @@ const UserHabits = () => {
 
         const promise = axios.get(userHabitsGetURL, config);
 
-        promise.then(response => setUserHabitList(response.data))
+        promise.then(response => {
+            setUserHabitList(response.data)
+        })
+
     }, [userHabitList]);
 
     return (
         <Container>
             {
+                
                 userHabitList.length !== 0 ?
                     userHabitList.map(habitData => <UserHabit {...{habitData}}/>)
                 :
                     <p>
                         Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!
                     </p>
+                
             }
         </Container>
     );

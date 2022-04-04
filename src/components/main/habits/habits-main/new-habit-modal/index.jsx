@@ -16,13 +16,14 @@ const NewHabitModal = ({ setIsModalOpen }) => {
 
     const submitNewHabit = (event) => {
         event.preventDefault();
-        setIsDisabled(true)
-
+        
         if(newHabitData.days.length === 0) {
             alert('Selecione ao menos um dia da semana!')
             
             return;
-        }
+        };
+
+        setIsDisabled(true)
 
         const newHabitPostURL = 'https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits';
         const config = {

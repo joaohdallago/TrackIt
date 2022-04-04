@@ -9,11 +9,13 @@ const HabitNameInput = () => {
     const { isDisabled } = useContext(IsDisabledContext);
     
     return (
-            <StyledInput disabled={isDisabled}
+            <StyledInput
                 type="text"
                 placeholder="nome do hábito"
                 onChange={e => setNewHabitData({...newHabitData, name: e.target.value})}
                 value={newHabitData.name}
+                disabled={isDisabled}
+                required
             />
     )
 };
