@@ -10,6 +10,8 @@ const GlobalStyle = createGlobalStyle`
 
         text-decoration: none;
         font-weight: normal;
+
+        background-color: transparent;
     }
 
     body {

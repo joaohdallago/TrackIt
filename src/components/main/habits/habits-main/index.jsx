@@ -9,19 +9,18 @@ import NewHabitModal from './new-habit-modal';
 const HabitsMain = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false)
-    console.log(isModalOpen)
 
     return (
         <ContainerMain>
             <Container>
                 <header>
                     <h2>Meus hábitos</h2>
-                    <button onClick={() => setIsModalOpen(!isModalOpen)}>
+                    <button onClick={() => setIsModalOpen(true)}>
                         +
                     </button>
                 </header>  
                 
-                {isModalOpen && <NewHabitModal />}
+                {isModalOpen && <NewHabitModal {...{setIsModalOpen}}/>}
 
                 <p>
                     Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!

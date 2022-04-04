@@ -3,12 +3,12 @@ import styled from "styled-components";
 import NewHabitInputs from "./new-habit-inputs";
 import NewHabitButtons from "./new-habit-buttons";
 
-const NewHabitModal = () => {
+const NewHabitModal = ({ setIsModalOpen }) => {
     return (
         <Container>
             <form>
                 <NewHabitInputs />
-                <NewHabitButtons />
+                <NewHabitButtons {...{setIsModalOpen}}/>
             </form>
         </Container>
     )
@@ -27,6 +27,13 @@ const Container = styled.div`
 
     background: #FFF;
 
+    form {
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 `;
 
 export default NewHabitModal;
