@@ -17,11 +17,6 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 17px;
-
-    p {
-        font-size: 18px;
-        line-height: 22px;
-    };
 `;
 
 export default HistoryMain;

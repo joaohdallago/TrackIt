@@ -12,6 +12,12 @@ const ContainerMain = styled.div`
 
                 color: #126BA5;
         }
+
+
+        p {
+                font-size: 18px;
+                line-height: 22px;
+        };
 `;
 
 export default ContainerMain;
