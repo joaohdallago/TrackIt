@@ -7,7 +7,7 @@ const NewHabitCheckboxes = () => {
 
     return (
         <Container>
-            {daysOfTheWeek.map(dayInitial => <NewHabitCheckbox {...{dayInitial}}/>)}
+            {daysOfTheWeek.map((dayInitial, index) => <NewHabitCheckbox {...{dayInitial, index}}/>)}
         </Container>
     )
 }

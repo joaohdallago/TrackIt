@@ -1,12 +1,42 @@
 import styled from "styled-components";
+import axios from "axios";
+import { useContext } from 'react';
 
 import NewHabitInputs from "./new-habit-inputs";
 import NewHabitButtons from "./new-habit-buttons";
 
+import UserContext from '../../../../../contexts/UserContext'
+import NewHabitContext from "../../../../../contexts/NewHabitContext"
+
 const NewHabitModal = ({ setIsModalOpen }) => {
+    const { user } = useContext(UserContext);
+    const { newHabitData, setNewHabitData} = useContext(NewHabitContext);
+
+    const submitNewHabit = (event) => {
+        event.preventDefault();
+        const newHabitPostURL = 'https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits';
+        const config = {
+            headers: {
+                "Authorization": "Bearer " + user.token,
+            }
+        }
+
+        const promise = axios.post(newHabitPostURL, newHabitData, config);
+
+        promise.then(reponse => {
+            console.log(reponse);
+            setNewHabitData({name: '', days: []});
+        })
+
+        promise.catch(err => {
+            console.log(err);
+            setNewHabitData({name: '', days: []});
+        })
+    }
+
     return (
         <Container>
-            <form>
+            <form onSubmit={submitNewHabit}>
                 <NewHabitInputs />
                 <NewHabitButtons {...{setIsModalOpen}}/>
             </form>

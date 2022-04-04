@@ -1,13 +1,28 @@
 import styled from "styled-components";
-import { useState } from 'react';
+import { useContext } from 'react';
 
-const NewHabitCheckbox = ({ dayInitial }) => {
-    const [isChecked, setIsChecked] = useState(false)
+import NewHabitContext from '../../../../../../../../contexts/NewHabitContext';
+
+const NewHabitCheckbox = ({ dayInitial, index }) => {
+    const { newHabitData, setNewHabitData } = useContext(NewHabitContext);
+    const { days } = newHabitData;
+
+    const isChecked = days.includes(index)
+
+
+    const checkDay = () => {
+
+        if (isChecked) {
+            setNewHabitData({...newHabitData, days: [...days].filter(day => day !== index).sort()})
+        } else { 
+            setNewHabitData({...newHabitData, days: [...days, index].sort()})
+        }
+    };
 
     return (
         <Container
             {...{isChecked}}
-            onClick={() => setIsChecked(!isChecked)}
+            onClick={checkDay}
         >
             {dayInitial}
         </Container>

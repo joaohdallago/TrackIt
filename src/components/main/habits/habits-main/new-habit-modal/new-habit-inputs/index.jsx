@@ -1,11 +1,21 @@
 import styled from "styled-components";
+import { useContext } from "react";
+
+import NewHabitContext from "../../../../../../contexts/NewHabitContext"
 
 import NewHabitCheckboxes from './new-habits-checkboxes';
 
 const NewHabitInputs = () => {
+    const { newHabitData, setNewHabitData } = useContext(NewHabitContext);
+
     return (
         <Container>
-            <input type="text" placeholder="nome do hábito"/>
+            <input
+                type="text"
+                placeholder="nome do hábito"
+                onChange={e => setNewHabitData({...newHabitData, name: e.target.value})}
+                value={newHabitData.name}
+            />
             <NewHabitCheckboxes />
         </Container>
     )
