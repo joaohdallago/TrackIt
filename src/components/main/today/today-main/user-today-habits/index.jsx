@@ -7,7 +7,6 @@ import TodayHabitsContext from '../../../../../contexts/TodayHabitsContext'
 
 const UserTodayHabits = () => {
     const { todayHabitList } = useContext(TodayHabitsContext);
-
     return (
         <Container>
             {
