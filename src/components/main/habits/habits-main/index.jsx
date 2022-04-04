@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { useState } from "react";
 
-import ContainerMain from "../../theme/containerMain";
+import ContainerMain from "../../../../theme/containerMain";
 
 
 import NewHabitModal from './new-habit-modal';
+import UserHabits from './user-habits'
 
 const HabitsMain = () => {
 
@@ -22,9 +23,7 @@ const HabitsMain = () => {
                 
                 {isModalOpen && <NewHabitModal {...{setIsModalOpen}}/>}
 
-                <p>
-                    Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!
-                </p>
+                <UserHabits />
             </Container>
         </ContainerMain>
     )

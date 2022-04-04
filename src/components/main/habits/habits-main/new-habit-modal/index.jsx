@@ -23,13 +23,12 @@ const NewHabitModal = ({ setIsModalOpen }) => {
 
         const promise = axios.post(newHabitPostURL, newHabitData, config);
 
-        promise.then(reponse => {
-            console.log(reponse);
+        promise.then(() => {
             setNewHabitData({name: '', days: []});
         })
 
-        promise.catch(err => {
-            console.log(err);
+        promise.catch(() => {
+            alert('Ops! Houve algum erro...')
             setNewHabitData({name: '', days: []});
         })
     }

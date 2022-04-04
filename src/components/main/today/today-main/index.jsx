@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import ContainerMain from "../../theme/containerMain";
+import ContainerMain from "../../../../theme/containerMain";
 
 import FormattedDay from './FormattedDay'
 
