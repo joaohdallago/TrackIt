@@ -7,13 +7,16 @@ import NewHabitButtons from "./new-habit-buttons";
 
 import UserContext from '../../../../../contexts/UserContext'
 import NewHabitContext from "../../../../../contexts/NewHabitContext"
+import IsDisabledContext from "../../../../../contexts/IsDisabledContext"
 
 const NewHabitModal = ({ setIsModalOpen }) => {
     const { user } = useContext(UserContext);
     const { newHabitData, setNewHabitData} = useContext(NewHabitContext);
+    const { setIsDisabled } = useContext(IsDisabledContext);
 
     const submitNewHabit = (event) => {
         event.preventDefault();
+        setIsDisabled(true)
 
         if(newHabitData.days.length === 0) {
             alert('Selecione ao menos um dia da semana!')
@@ -33,11 +36,13 @@ const NewHabitModal = ({ setIsModalOpen }) => {
         promise.then(() => {
             setNewHabitData({name: '', days: []});
             setIsModalOpen(false)
+            setIsDisabled(false)
         })
 
         promise.catch(() => {
             alert('Ops! Houve algum erro...')
             setNewHabitData({name: '', days: []});
+            setIsDisabled(false)
         })
     }
 

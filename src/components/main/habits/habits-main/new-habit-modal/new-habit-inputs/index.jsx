@@ -1,21 +1,12 @@
 import styled from "styled-components";
-import { useContext } from "react";
 
-import NewHabitContext from "../../../../../../contexts/NewHabitContext"
-
+import HabitNameInput from './habit-name-input'
 import NewHabitCheckboxes from './new-habits-checkboxes';
 
-const NewHabitInputs = () => {
-    const { newHabitData, setNewHabitData } = useContext(NewHabitContext);
-
+const NewHabitInputs = () => {  
     return (
         <Container>
-            <input
-                type="text"
-                placeholder="nome do hábito"
-                onChange={e => setNewHabitData({...newHabitData, name: e.target.value})}
-                value={newHabitData.name}
-            />
+            <HabitNameInput />
             <NewHabitCheckboxes />
         </Container>
     )
@@ -30,19 +21,6 @@ const Container = styled.div`
             font-size: 20px;
             
             border-radius: 5px;
-        }
-
-        input {
-            width: 303px;
-            height: 45px;
-
-            text-indent: 11px;
-
-            border: 1px solid #D5D5D5;
-
-            ::placeholder {
-                color: #D5D5D5;
-            }
         }
 `;
 

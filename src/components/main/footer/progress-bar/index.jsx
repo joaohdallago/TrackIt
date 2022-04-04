@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { Link } from 'react-router-dom';
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 
 import TodayHabitsContext from '../../../../contexts/TodayHabitsContext'
 
