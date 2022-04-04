@@ -8,8 +8,9 @@ const GlobalStyle = createGlobalStyle`
         border: 0;
         margin: 0;
 
-        text-decoration: none;
         font-weight: normal;
+        font-style: normal;
+        text-decoration: none;
 
         background-color: transparent;
     }
