@@ -1,30 +1,12 @@
 import styled from "styled-components";
-import axios from "axios";
-
-import { useState, useEffect, useContext } from "react";
+import { useContext } from 'react';
 
 import UserTodayHabit from './user-today-habit';
 
-import UserContext from '../../../../../contexts/UserContext'
+import TodayHabitsContext from '../../../../../contexts/TodayHabitsContext'
 
 const UserTodayHabits = () => {
-    const { user } = useContext(UserContext);
-
-    const [ todayHabitList, setTodayHabitList ] = useState([]);
-
-    useEffect(() => {
-        const getTodayHabitListURL = 'https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/today';
-
-        const config = {
-            headers: {
-                Authorization: 'Bearer ' + user.token
-            }
-        };
-
-        const promise = axios.get(getTodayHabitListURL, config);
-
-        promise.then(response => setTodayHabitList(response.data))
-    }, [todayHabitList])
+    const { todayHabitList } = useContext(TodayHabitsContext);
 
     return (
         <Container>

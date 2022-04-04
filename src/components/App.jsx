@@ -15,7 +15,7 @@ import History from './main/history';
 import UserContext from '../contexts/UserContext'
 import IsDisabledContext from '../contexts/IsDisabledContext';
 import NewHabitContext from '../contexts/NewHabitContext'
-import UserTodayHabitsContext from '../contexts/UserTodayHabitsContext'
+import TodayHabitsContext from '../contexts/TodayHabitsContext'
 
 const App = () => {
     const [ user, setUser ] = useState({});
@@ -24,7 +24,7 @@ const App = () => {
         name: '',
         days: []
     });
-    const [ UserTodayHabitList ] = useState([]);
+    const [ todayHabitList, setTodayHabitList ] = useState([]);
 
     return (
         <>
@@ -33,15 +33,17 @@ const App = () => {
             <UserContext.Provider value={{ user, setUser }}>
                 <IsDisabledContext.Provider value={{ isDisabled, setIsDisabled }}>
                     <NewHabitContext.Provider value={{ newHabitData, setNewHabitData }}>
-                        <BrowserRouter>
-                            <Routes>
-                                <Route path='/' element={<Login />}/>
-                                <Route path='/cadastro' element={<SignUp />}/>
-                                <Route path='/hoje' element={<Today />} />
-                                <Route path='/habitos' element={<Habits />} />
-                                <Route path='/historico' element={<History />} />
-                            </Routes>
-                        </BrowserRouter>
+                        <TodayHabitsContext.Provider value={{ todayHabitList, setTodayHabitList}}>
+                            <BrowserRouter>
+                                <Routes>
+                                    <Route path='/' element={<Login />}/>
+                                    <Route path='/cadastro' element={<SignUp />}/>
+                                    <Route path='/hoje' element={<Today />} />
+                                    <Route path='/habitos' element={<Habits />} />
+                                    <Route path='/historico' element={<History />} />
+                                </Routes>
+                            </BrowserRouter>
+                        </TodayHabitsContext.Provider>
                     </NewHabitContext.Provider>
                 </IsDisabledContext.Provider>
             </UserContext.Provider>

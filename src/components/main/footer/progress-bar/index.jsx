@@ -1,9 +1,18 @@
 import styled from "styled-components";
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { Link } from 'react-router-dom';
+import { useContext, useState, useEffect } from "react";
+
+import TodayHabitsContext from '../../../../contexts/TodayHabitsContext'
 
 const ProgressBar = () => {
-    const percentage = 66;
+    const { todayHabitList } = useContext(TodayHabitsContext)
+
+    const doneHabitsList = todayHabitList.filter(habit => habit.done)
+
+    const percentage = doneHabitsList.length * 100 /todayHabitList.length;
+
+    
 
     return (
         <Container>
